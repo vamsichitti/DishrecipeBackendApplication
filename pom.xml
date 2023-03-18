@@ -85,7 +85,9 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			
 		</plugins>
+		<finalName>dish-recipe-management</finalName>
 	</build>
 
 </project>
