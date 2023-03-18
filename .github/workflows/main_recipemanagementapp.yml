@@ -23,6 +23,17 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+      
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: 7989852519/dish-recipe-management
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
 
 #       - name: Upload artifact for deployment job
 #         uses: actions/upload-artifact@v2
